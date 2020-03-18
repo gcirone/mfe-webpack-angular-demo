@@ -1,16 +1,41 @@
 {
-  "name": "mfe-demo-root",
+  "name": "mfe-angular-demo",
   "private": true,
   "scripts": {
     "build": "yarn workspaces run build",
     "serve": "wsrun --parallel serve",
-    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
+    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
+    "format": "prettier --check '{apps,libs}/**/*.{ts,js,json,html}'",
+    "postinstall": "replace '(throw new Error\\(dep+.*)' '//$1' node_modules/webpack/lib/NormalModuleFactory.js --silent"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "libs/*"],
+  "dependencies": {
+    "@angular/common": "^9.1.0-next.4",
+    "@angular/compiler": "^9.1.0-next.4",
+    "@angular/compiler-cli": "^9.1.0-next.4",
+    "@angular/core": "^9.1.0-next.4",
+    "@angular/forms": "^9.1.0-next.4",
+    "@angular/platform-browser": "^9.1.0-next.4",
+    "@angular/platform-browser-dynamic": "^9.1.0-next.4",
+    "@angular/router": "^9.1.0-next.4",
+    "rxjs": "^6.5.4",
+    "tslib": "^1.11.0",
+    "typescript": "~3.7.5",
+    "zone.js": "^0.10.2"
+  },
   "devDependencies": {
-    "concurrently": "^5.1.0",
+    "@ngtools/webpack": "^9.1.0-next.3",
+    "@types/node": "~13.9.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "html-webpack-plugin": "^4.0.0-beta.11",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "raw-loader": "^4.0.0",
+    "replace": "^1.1.5",
+    "serve": "^11.3.0",
+    "webpack": "git://github.com/webpack/webpack.git#dev-1",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2",
     "wsrun": "^5.2.0"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "name": "site-one",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack --mode production",
+    "build:minimize": "yarn build --optimize-minimize",
+    "serve": "serve dist -p 4200 -s"
+  }
+}
