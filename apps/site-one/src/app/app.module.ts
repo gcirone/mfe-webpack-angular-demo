@@ -21,12 +21,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent, HomeComponent, NavbarComponent],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
-    ...siteCoreModules
-  ],
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes, { initialNavigation: 'enabled' }), ...siteCoreModules],
   providers: [],
   bootstrap: [AppComponent]
 })

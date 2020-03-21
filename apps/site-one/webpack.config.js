@@ -18,7 +18,7 @@ module.exports = merge(webpack, {
       library: { type: 'var', name: 'site' },
       filename: 'remote-entry.js',
       remotes: {
-        'tone': 'tone'
+        tone: 'tone'
       },
       exposes: {},
       shared

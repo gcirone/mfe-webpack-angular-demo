@@ -1,2 +1,2 @@
-export * from './auth/auth.module'
-export * from './auth/login.service'
+export * from './auth/auth.module';
+export * from './auth/login.service';

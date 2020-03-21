@@ -12,6 +12,6 @@ import { LoginService } from 'site-core';
 })
 export class TeamOneComponent {
   constructor(private loginService: LoginService) {
-    console.log('loginService', this.loginService.isLoggedIn)
+    console.log('loginService', this.loginService.isLoggedIn);
   }
 }

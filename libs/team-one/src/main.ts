@@ -1,1 +1,1 @@
-export * from './+team-one/team-one.module'
+export * from './+team-one/team-one.module';

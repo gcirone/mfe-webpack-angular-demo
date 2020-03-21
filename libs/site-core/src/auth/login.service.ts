@@ -7,7 +7,7 @@ export class LoginService {
   private _loginState = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
-    console.log('LoginService.constructor')
+    console.log('LoginService.constructor');
     // this.http.get<any>(url).pipe(shareReplay(1))
   }
 
@@ -16,7 +16,7 @@ export class LoginService {
   }
 
   loginStateChanges() {
-    return this._loginState.asObservable()
+    return this._loginState.asObservable();
   }
 
   private setLoginState(state: boolean) {
