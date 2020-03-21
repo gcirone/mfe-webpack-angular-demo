@@ -1,38 +1,28 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
 const { args, webpack, shared } = require('../../config/webpack-common');
 const merge = require('webpack-merge');
 
 module.exports = merge(webpack, {
   output: {
-    publicPath: 'http://localhost:4200/'
+    publicPath: 'http://localhost:5500/'
   },
 
   plugins: [
-    new CopyPlugin([{ from: 'public', to: '.' }]),
-
     new ModuleFederationPlugin({
-      name: 'site',
-      library: { type: 'var', name: 'site' },
+      name: 'tone',
+      library: { type: 'var', name: 'tone' },
       filename: 'remote-entry.js',
-      remotes: {
-        'tone': 'tone'
+      remotes: {},
+      exposes: {
+        'team-one.module': './src/+team-one/team-one.module'
       },
-      exposes: {},
       shared
-    }),
-
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      chunks: ['polyfills', 'main'],
-      minify: args.minimize
     }),
 
     new AngularCompilerPlugin({
       tsConfigPath: './tsconfig.json',
-      entryModule: './src/app/app.module#AppModule',
+      entryModule: './src/main',
       sourceMap: !args.minimize
     })
   ]

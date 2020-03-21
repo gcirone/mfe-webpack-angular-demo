@@ -1,11 +1,11 @@
 {
-  "name": "site-one",
+  "name": "team-one",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "chokidar \"src/**/*.ts\" -c \"yarn build\" --initial",
     "build": "webpack --mode production --progress",
     "build:min": "rm -rf dist/* && yarn build --optimize-minimize",
-    "serve": "serve dist -p 4200 -s"
+    "serve": "serve dist -p 5500 -s"
   }
 }

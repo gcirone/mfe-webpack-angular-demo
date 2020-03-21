@@ -1,3 +1,4 @@
+const  { join } = require('path');
 const  { argv } = require('yargs');
 
 const production = argv.mode === 'production';
@@ -13,22 +14,31 @@ module.exports = {
     '@angular/platform-browser-dynamic',
     'rxjs',
     'rxjs/operators',
-    'tslib',
-    'zone.js',
+    'site-core'
   ],
   webpack: {
     entry: './src/index',
     mode: 'development',
-    devtool: !minimize ? 'source-map' : false,
+    devtool: minimize ? false : 'source-map',
     profile: false,
     cache: false,
-    output: { crossOriginLoading: false },
-    optimization: { minimize },
-    performance: { hints: false },
+    output: {
+      crossOriginLoading: false
+    },
+    optimization: {
+      minimize,
+      moduleIds: minimize ? 'natural' : 'named'
+    },
+    performance: {
+      hints: false
+    },
     resolve: {
       symlinks: true,
       extensions: ['.ts', '.js', '.json'],
-      mainFields: ['browser', 'module', 'main']
+      mainFields: ['browser', 'module', 'main'],
+      alias: {
+        'site-core': join(__dirname, '../libs/site-core/src/main.ts'),
+      }
     },
     module: {
       rules: [
