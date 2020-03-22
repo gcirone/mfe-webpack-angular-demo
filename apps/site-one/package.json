@@ -5,7 +5,8 @@
   "scripts": {
     "start": "chokidar \"src/**/*.ts\" -c \"yarn build\" --initial",
     "build": "webpack --mode production --progress",
-    "build:min": "rm -rf dist/* && yarn build --optimize-minimize",
+    "build:min": "yarn clean && yarn build --optimize-minimize",
+    "clean": "rm -rf dist",
     "serve": "serve dist -p 4200 -s"
   }
 }

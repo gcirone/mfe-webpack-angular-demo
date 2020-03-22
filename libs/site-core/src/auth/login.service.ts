@@ -4,22 +4,21 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
-  private _loginState = new BehaviorSubject<boolean>(false);
+  private loginState = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
-    console.log('LoginService.constructor');
     // this.http.get<any>(url).pipe(shareReplay(1))
   }
 
   get isLoggedIn() {
-    return this._loginState.getValue();
+    return this.loginState.getValue();
   }
 
   loginStateChanges() {
-    return this._loginState.asObservable();
+    return this.loginState.asObservable();
   }
 
-  private setLoginState(state: boolean) {
-    this._loginState.next(state);
+  setLoginState(state: boolean) {
+    this.loginState.next(state);
   }
 }

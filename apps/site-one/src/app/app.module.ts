@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'team-one',
-    loadChildren: () => import(('tone/team-one.module')).then(({ TeamOneModule }) => TeamOneModule)
+    loadChildren: () => import('teamone/team-one.module').then(({ TeamOneModule }) => TeamOneModule)
   },
   { path: '**', component: NotFoundComponent }
 ];
@@ -22,7 +22,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [AppComponent, NotFoundComponent, HomeComponent, NavbarComponent],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes, { initialNavigation: 'enabled' }), ...siteCoreModules],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

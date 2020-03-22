@@ -5,7 +5,7 @@
     "build": "yarn workspaces run build",
     "serve": "wsrun --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
-    "format": "prettier --check '{apps,libs}/**/*.{ts,js,json,html}'",
+    "format": "prettier --check '{apps,libs}/**/*.{ts,json,html}'",
     "postinstall": "replace '(throw new Error\\(dep+.*)' '//$1' node_modules/webpack/lib/NormalModuleFactory.js --silent"
   },
   "workspaces": ["apps/*", "libs/*"],
@@ -20,7 +20,7 @@
     "@angular/router": "^9.1.0-next.4",
     "rxjs": "^6.5.4",
     "tslib": "^1.11.0",
-    "typescript": "~3.7.5",
+    "typescript": "~3.8.3",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {

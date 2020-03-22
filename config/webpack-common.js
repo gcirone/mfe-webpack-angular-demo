@@ -1,11 +1,12 @@
-const  { join } = require('path');
-const  { argv } = require('yargs');
+const { join } = require('path');
+const { argv } = require('yargs');
 
 const production = argv.mode === 'production';
 const minimize = argv.optimizeMinimize || false;
+const root = join(__dirname, '..');
 
 module.exports = {
-  args: { production, minimize },
+  args: { production, minimize, root },
   shared: [
     '@angular/core',
     '@angular/router',
@@ -37,7 +38,7 @@ module.exports = {
       extensions: ['.ts', '.js', '.json'],
       mainFields: ['browser', 'module', 'main'],
       alias: {
-        'site-core': join(__dirname, '../libs/site-core/src/main.ts'),
+        'site-core': join(root, 'libs/site-core/src/main.ts')
       }
     },
     module: {

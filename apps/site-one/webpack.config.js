@@ -1,13 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const merge = require('webpack-merge');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
 const { args, webpack, shared } = require('../../config/webpack-common');
-const merge = require('webpack-merge');
 
 module.exports = merge(webpack, {
   output: {
-    publicPath: 'http://localhost:4200/'
+    publicPath: 'http://localhost:4200/',
   },
 
   plugins: [
@@ -18,7 +18,7 @@ module.exports = merge(webpack, {
       library: { type: 'var', name: 'site' },
       filename: 'remote-entry.js',
       remotes: {
-        tone: 'tone'
+        teamone: 'teamone'
       },
       exposes: {},
       shared

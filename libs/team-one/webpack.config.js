@@ -1,7 +1,7 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const merge = require('webpack-merge');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
 const { args, webpack, shared } = require('../../config/webpack-common');
-const merge = require('webpack-merge');
 
 module.exports = merge(webpack, {
   output: {
@@ -10,8 +10,8 @@ module.exports = merge(webpack, {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'tone',
-      library: { type: 'var', name: 'tone' },
+      name: 'teamone',
+      library: { type: 'var', name: 'teamone' },
       filename: 'remote-entry.js',
       remotes: {},
       exposes: {

@@ -6,12 +6,15 @@ import { LoginService } from 'site-core';
   template: `
     <main>
       <p>Team one section!</p>
-      <p>Go back to <a [routerLink]="['/']">home</a></p>
+      <p>
+        <small>Go back to <a [routerLink]="['/']">home</a></small>
+      </p>
+      <p *ngIf="loginService.loginStateChanges() | async">
+        <small>isLoggedIn: {{ loginService.isLoggedIn }}</small>
+      </p>
     </main>
   `
 })
 export class TeamOneComponent {
-  constructor(private loginService: LoginService) {
-    console.log('loginService', this.loginService.isLoggedIn);
-  }
+  constructor(public loginService: LoginService) {}
 }
