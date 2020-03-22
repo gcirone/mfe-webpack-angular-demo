@@ -14,7 +14,11 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'team-one',
-    loadChildren: () => import('teamone/team-one.module').then(({ TeamOneModule }) => TeamOneModule)
+    loadChildren: () => import(('teamone/team-one.module')).then(({ TeamOneModule }) => TeamOneModule)
+  },
+  {
+    path: 'team-two',
+    loadChildren: () => import(('teamtwo/team-two.module')).then(({ TeamTwoModule }) => TeamTwoModule)
   },
   { path: '**', component: NotFoundComponent }
 ];

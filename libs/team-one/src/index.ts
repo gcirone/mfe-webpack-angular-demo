@@ -1,1 +1,1 @@
-import(/* webpackChunkName: "site-core" */ './main');
+import(/* webpackChunkName: "team-one" */ './main');

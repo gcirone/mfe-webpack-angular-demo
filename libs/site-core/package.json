@@ -1,5 +1,11 @@
 {
   "name": "site-core",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "echo start",
+    "build": "echo build",
+    "clean": "echo clean",
+    "serve": "echo serve"
+  }
 }

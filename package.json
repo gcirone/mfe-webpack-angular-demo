@@ -2,7 +2,7 @@
   "name": "mfe-angular-demo",
   "private": true,
   "scripts": {
-    "build": "yarn workspaces run build",
+    "build": "yarn workspaces run build --optimize-minimize",
     "serve": "wsrun --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
     "format": "prettier --check '{apps,libs}/**/*.{ts,json,html}'",
