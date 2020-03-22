@@ -1,0 +1,12 @@
+{
+  "name": "team-three",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "chokidar \"src/**/*.ts\" -c \"yarn build\" --initial",
+    "build": "webpack --mode production --progress",
+    "build:min": "yarn clean && yarn build --optimize-minimize",
+    "clean": "rm -rf dist",
+    "serve": "serve dist -p 5700 -s -d"
+  }
+}
