@@ -7,6 +7,11 @@ import { PaymentComponent } from './payment.component';
 @NgModule({
   imports: [CommonModule, RouterModule],
   declarations: [PaymentComponent],
-  exports: [PaymentComponent]
+  exports: [PaymentComponent],
+  bootstrap: [PaymentComponent],
 })
-export class PaymentModule {}
+export class PaymentModule {
+  constructor() {
+    console.log('PaymentModule')
+  }
+}

@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthModule } from 'site-core';
+import { AuthModule, LazyLoaderModule } from 'site-core';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './components/not-found.component';
 import { HomeComponent } from './components/home.component';
 import { NavbarComponent } from './components/navbar.component';
 
-const siteCoreModules = [AuthModule];
+const siteCoreModules = [AuthModule, LazyLoaderModule];
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +26,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [AppComponent, NotFoundComponent, HomeComponent, NavbarComponent],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes, { initialNavigation: 'enabled' }), ...siteCoreModules],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: []
 })
 export class AppModule {}

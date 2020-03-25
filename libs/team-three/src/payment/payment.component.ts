@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from 'site-core';
 
 @Component({
@@ -7,7 +7,7 @@ import { LoginService } from 'site-core';
     <main>
       <p>Team three payment!</p>
       <p>
-        <small>Go back to <a [routerLink]="['/']">home</a></small>
+        <small>Go back to <a [routerLink]="['/team-one']">team one</a></small>
       </p>
       <p *ngIf="loginService.loginStateChanges() | async">
         <small>isLoggedIn: {{ loginService.isLoggedIn }}</small>
@@ -15,6 +15,17 @@ import { LoginService } from 'site-core';
     </main>
   `
 })
-export class PaymentComponent {
+export class PaymentComponent implements OnInit, OnDestroy {
+  @Input() methods: string[];
+
   constructor(public loginService: LoginService) {}
+
+  ngOnInit() {
+    console.log('methods', this.methods, this.loginService.isLoggedIn)
+  }
+
+  ngOnDestroy(){
+    console.log('destroy')
+  }
+
 }

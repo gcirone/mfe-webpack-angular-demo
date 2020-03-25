@@ -13,7 +13,9 @@ module.exports = merge(webpack, {
       name: 'teamone',
       library: { type: 'var', name: 'teamone' },
       filename: 'remote-entry.js',
-      remotes: {},
+      remotes: {
+        teamthree: 'teamthree'
+      },
       exposes: {
         'team-one.module': './src/+team-one/team-one.module'
       },

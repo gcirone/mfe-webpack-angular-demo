@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "chokidar \"src/**/*.ts\" -c \"yarn build\" --initial",
+    "start": "chokidar \"src/**/*.ts\" \"../../libs/site-core/**/*.ts\" -c \"yarn build\" --initial",
     "build": "webpack --mode production --progress",
     "build:min": "yarn clean && yarn build --optimize-minimize",
     "clean": "rm -rf dist",
