@@ -8,10 +8,6 @@ import { PaymentComponent } from './payment.component';
   imports: [CommonModule, RouterModule],
   declarations: [PaymentComponent],
   exports: [PaymentComponent],
-  bootstrap: [PaymentComponent],
+  bootstrap: [PaymentComponent]
 })
-export class PaymentModule {
-  constructor() {
-    console.log('PaymentModule')
-  }
-}
+export class PaymentModule {}

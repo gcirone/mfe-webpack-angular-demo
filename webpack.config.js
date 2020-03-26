@@ -1,16 +1,21 @@
-const { join } = require('path');
+const { join, resolve } = require('path');
 const { argv } = require('yargs');
 
 const production = argv.mode === 'production';
 const minimize = argv.optimizeMinimize || false;
-const root = join(__dirname, '..');
+const root = resolve(__dirname);
 
 module.exports = {
-  args: { production, minimize, root },
+  args: {
+    root,
+    production,
+    minimize,
+  },
   shared: [
     '@angular/core',
     '@angular/router',
     '@angular/common',
+    '@angular/common/http',
     '@angular/platform-browser',
     '@angular/platform-browser-dynamic',
     'rxjs',

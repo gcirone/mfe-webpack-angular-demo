@@ -3,7 +3,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const CopyPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
-const { args, webpack, shared } = require('../../config/webpack-common');
+const { args, webpack, shared } = require('../../webpack.config');
 
 module.exports = merge(webpack, {
   output: {

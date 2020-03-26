@@ -16,16 +16,13 @@ import { LoginService } from 'site-core';
   `
 })
 export class PaymentComponent implements OnInit, OnDestroy {
-  @Input() methods: string[];
-
   constructor(public loginService: LoginService) {}
 
   ngOnInit() {
-    console.log('methods', this.methods, this.loginService.isLoggedIn)
+    // console.log('PaymentComponent', this.loginService.isLoggedIn)
   }
 
-  ngOnDestroy(){
-    console.log('destroy')
+  ngOnDestroy() {
+    // console.log('destroy')
   }
-
 }
